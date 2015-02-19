@@ -43,4 +43,9 @@ public class CoordinatePair {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "CoordinatePair [x=" + x + ", y=" + y + "]";
+	}
 }

@@ -26,6 +26,14 @@ public class TableField {
 	public boolean isTypeOf(FieldType fieldType) {
 		return this.fieldType.equals(fieldType);
 	}
+	
+	public int getX(){
+		return this.coordinates.getX();
+	}
+	
+	public int getY(){
+		return this.coordinates.getY();
+	}
 
 	@Override
 	public int hashCode() {
@@ -52,6 +60,10 @@ public class TableField {
 			return false;
 		return true;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "TableField [fieldType=" + fieldType + ", coordinates=" + coordinates + "]";
+	}
 	
 }

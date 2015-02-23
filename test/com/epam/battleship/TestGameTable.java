@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.easymock.EasyMock;
@@ -21,10 +20,9 @@ public class TestGameTable {
 	@Before
 	public void setUp(){
 		testFieldMock = EasyMock.createMock(TableField.class);
-		fields = new HashMap<CoordinatePair, TableField>();
 		testCoordinates = new CoordinatePair(1, 1);
 		fields.put(testCoordinates, testFieldMock);
-		underTest = new GameTable(fields, 5, 5);
+		underTest = new GameTable(5, 5);
 	}
 	
 	@Test

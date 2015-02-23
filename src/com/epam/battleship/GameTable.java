@@ -1,6 +1,7 @@
 package com.epam.battleship;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GameTable {
@@ -9,21 +10,13 @@ public class GameTable {
 	private final int width;
 	private final int height;
 
-	public GameTable(Map<CoordinatePair, TableField> fields, int width,
-			int height) {
-		super();
-		this.width = width;
-		this.height = height;
-		this.fields = new HashMap<CoordinatePair, TableField>(fields);
-	}
-
 	public GameTable(int width, int height) {
 		super();
 		this.width = width;
 		this.height = height;
 		this.fields = new HashMap<CoordinatePair, TableField>();
 	}
-
+	
 	public int getWidth() {
 		return width;
 	}
@@ -83,6 +76,9 @@ public class GameTable {
 			for(int j = 0; j < height; j++){
 				CoordinatePair coordinatePair = new CoordinatePair(i, j);
 				if(this.hasFieldAtCoordinate(coordinatePair) && this.getFieldTypeAtCoordinates(coordinatePair).equals(FieldType.SHIP)){
+					sb.append(" O ");
+				}
+				else if(this.hasFieldAtCoordinate(coordinatePair) && this.getFieldTypeAtCoordinates(coordinatePair).equals(FieldType.DESTROYED)){
 					sb.append(" X ");
 				}
 				else {
